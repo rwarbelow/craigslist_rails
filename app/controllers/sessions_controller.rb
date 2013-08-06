@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_username(params[:username])
     if @user && @user.authenticate(params[:password])
+      session[:id] = @user.id
       redirect_to user_path(@user)
     else
       @errors = ["Username and/or password are invalid."]
