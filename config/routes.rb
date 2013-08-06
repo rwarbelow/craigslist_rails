@@ -7,7 +7,7 @@ Craigslist::Application.routes.draw do
 
   resources :users
   resources :posts
+  resources :categories
 
   root :to => 'home#index'
-
 end
